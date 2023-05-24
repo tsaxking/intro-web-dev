@@ -1,4 +1,5 @@
 # Github (git)
+Github is a website that hosts git repositories. It is used to share code with other people as well as have a powerful version history of the code.
 
 ## Clone
 Cloning is basically making a copy (a clone) of a repository on your device. This is done by using the `git clone` command. This command takes the URL of the repository as an argument. The URL can be found on the repository page on Github. 
