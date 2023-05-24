@@ -7,6 +7,8 @@
 const bigInt = 123120391209310293n; // will stay as 123120391209310293n
 const normalNumber = 123120391209310293; // will 123120391209310290 because numbers aren't accurate enough
 
+// other things of interest:
+// BigInt has no NaN
 console.log({
     bigInt,
     normalNumber
