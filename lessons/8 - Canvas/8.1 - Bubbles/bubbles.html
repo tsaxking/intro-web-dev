@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbles</title>
+</head>
+<body style="padding: 0; margin: 0;">
+    <canvas></canvas>
+
+    <script src="../index.js"></script>
+
+    <script>
+        const bubbles = new Array(50).fill(0).map(() => Bubble.random());
+
+        const canvas = new Canvas(document.querySelector('canvas'));
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        canvas.addElement(...bubbles);
+
+        canvas.start();
+    </script>
+</body>
+</html>
