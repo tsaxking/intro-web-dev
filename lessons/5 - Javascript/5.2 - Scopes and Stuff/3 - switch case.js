@@ -20,4 +20,5 @@ switch (foo) {
         break;
     default:
         console.log("foo isn't bar, foo, or baz");
+        break;
 }

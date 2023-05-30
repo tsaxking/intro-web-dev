@@ -6,7 +6,7 @@ const num = 1;
 // stillAString is equal to "abc1" because the 1 got coerced into the string "1"
 const stillAString = str + num; 
 
-// Values are called "truthy" or "falsy" based on whether they are true or false when you coerce them into boolean
+// Values are called "truthy" or "falsy" based on whether they are true or false when you coerce them into a boolean
 
 // You can tell whether a value is truthy in most cases by either doing if(value) or !!value
 // if (value) converts a value to a boolean because if statements only take in booleans
