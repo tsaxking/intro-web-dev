@@ -3,7 +3,7 @@
 const arr = [1, 2, 4, 5];
 const { length } = arr;
 const avg = arr.reduce((accumulator, currentElement) => {
-    /* This will log: 
+    /*  This will log: 
         { accumulator: 0, currentElement: 1 }
         { accumulator: 1, currentElement: 2 }
         { accumulator: 3, currentElement: 4 }

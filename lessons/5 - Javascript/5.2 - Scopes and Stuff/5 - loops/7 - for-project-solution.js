@@ -1,5 +1,5 @@
-for (y = 1; y < 6; y++) {
-    for (y = 0; y < y; y ++) {
-        console.log(y);
+for (j = 1; j < 6; j++) {
+    for (j = 0; j < j; j ++) {
+        console.log(j);
     }
 }
