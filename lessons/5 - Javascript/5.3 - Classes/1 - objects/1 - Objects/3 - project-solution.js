@@ -1,5 +1,7 @@
 function add(point1, point2) {
+    // Creates a new point object
     return {
+        // sets the x value to the sum of the two x values
         x: point1.x + point2.x,
         y: point1.y + point2.y,
         z: point1.z + point2.z,
@@ -44,6 +46,8 @@ const point3 = add(point1, point2);
 const point4 = subtract(point1, point2);
 const point5 = multiply(point1, 2);
 const point6 = divide(point2, -2);
+
+// This is just a nice way to log things since it will log them as { name: value }
 console.log({
     point3,
     point4,
