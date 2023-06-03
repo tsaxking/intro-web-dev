@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "minesweeper": "cd './lessons/5 - Javascript/5.5 - Bonus/minesweeper' && tsc && node ./dist/main.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "keypress": "^0.2.1",
     "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.5"
   }
 }

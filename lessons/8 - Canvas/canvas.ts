@@ -273,10 +273,14 @@ class Vector implements Drawable {
         Line.fromPointVector(point, this.multiply(100)).draw(canvas);
     }
 
-    components(vector: Vector): { parallel: Vector, perpendicular: Vector } {
-        const dot = this.dot(vector);
-        const x = vector.multiply(dot / vector.dot(vector));
-        const y = this.subtract(x);
-        return { parallel: x, perpendicular: y };
+    components(toVector: Vector): { parallel: Vector, perpendicular: Vector } {
+        const parallel = this.project(toVector);
+        const perpendicular = this.subtract(parallel);
+        return { parallel, perpendicular };
+    }
+
+    project(toVector: Vector): Vector {
+        const unit = toVector.normalized;
+        return unit.multiply(this.dot(unit));
     }
 }

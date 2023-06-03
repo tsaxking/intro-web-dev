@@ -1,29 +1,39 @@
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-const cpu = () => {
-    return new Promise(async (resolve, reject) => {
-        const start = Date.now();
-        while (Date.now() - start < 10000) {
-            await sleep(0);
-            let i = Math.random();
-            for (const j in new Array(10000).fill()) {
-                i *= Math.random() + 0.5;
-            }
-            console.log(i);
-        }
-        resolve();
-    });
+const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
+
+const test = () => {
+    return Math.random() >= 0.5 ? 1 : 0;
 }
 
-cpu();
+const tests = 1000000000;
 
-const clock = () => {
-    const logNow = () => {
-        console.log(Date.now());
+const runTest = (num) => {
+    let sum = 0;
+    for (let i = 0; i < num; i++) {
+        sum += test();
     }
-
-    logNow();
-    
-    const interval = setInterval(logNow, 1000);
+    return sum / num;
 }
 
-clock();
+if (isMainThread) {
+    // run 100 tests in parallel
+    const promises = [];
+    for (let i = 0; i < 100; i++) {
+        promises.push(new Promise((resolve, reject) => {
+            const worker = new Worker(__filename, { workerData: tests });
+            worker.on('message', resolve);
+            worker.on('error', reject);
+            worker.on('exit', (code) => {
+                if (code !== 0) reject(new Error(`Worker stopped with exit code ${code}`));
+            });
+        }));
+    }
+    Promise.all(promises).then((results) => {
+        console.log(results.reduce((a, b) => a + b, 0) / results.length);
+    }).catch((err) => {
+        console.error(err);
+    });
+} else {
+    // console.log('Worker thread');
+    const result = runTest(workerData);
+    parentPort.postMessage(result);
+}
