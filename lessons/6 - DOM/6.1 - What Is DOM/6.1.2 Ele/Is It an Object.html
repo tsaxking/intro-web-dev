@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is it an object?</title>
+</head>
+
+<div id="isHover"></div>
+
+<!-- WIDTH:300px; HEIGHT:50px -->
+<body>
+    <img STYLE="position:absolute; TOP:5%; LEFT:15%; width: 15%;" src="/intro-web-dev/lessons/6 - DOM/6.1 - What Is DOM/6.1.2 Ele/Tree.png">
+    <img STYLE="position:absolute; TOP:55%; LEFT:75%; width: 15%;" src="/intro-web-dev/lessons/6 - DOM/6.1 - What Is DOM/6.1.2 Ele/minecraft.png">
+
+    <h1 STYLE="position:absolute; TOP:15%; LEFT:86%; width: 15%;" >Hover over me!</h1>
+    <h1 STYLE="position:absolute; TOP:85%; LEFT:50%; width: 15%;" >Me too!</h1>
+    <h1 STYLE="position:absolute; TOP:50%; LEFT:15%; width: 15%;" >Try me!</h1>
+
+    <h1 id = objectHovered STYLE="position:absolute; TOP:50%; LEFT:40%; color:#16F529;">That is an object!</h1>
+    <h1 id = objectNotHovered STYLE="position:absolute; TOP:50%; LEFT:40%; color:#16F529;">That is NOT an object!</h1>
+    
+</body>
+
+<script>
+
+    document.getElementById("objectNotHovered").style.display = "none";
+    document.getElementById("objectHovered").style.display = "none";
+
+    // Getting the element isHover and assigning it to a variable
+    var element = document.getElementById('isHover');
+    var content;
+
+   // Get all objects on the HTML page
+    var objects = Array.from(document.querySelectorAll('*'));
+
+    // This loop goes through the objects list and adds a listener for each object
+    for (i = 0; i < objects.length; i++) {
+
+        object = objects[i];
+
+        object.addEventListener("mouseleave", function (event) {
+
+        document.getElementById("objectNotHovered").style.display = "block";
+        document.getElementById("objectHovered").style.display = "none";
+        isMouseHover = false
+
+        }, false);
+
+        object.addEventListener("mouseover", function (event) {
+
+        document.getElementById("objectNotHovered").style.display = "none";
+        document.getElementById("objectHovered").style.display = "block";
+        isMouseHover = true
+
+        }, false);
+
+    }
+    
+
+</script>
+
+</html>

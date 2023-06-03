@@ -5,12 +5,12 @@
 //  is a global variable so we can access it anywhere
 const a = 1;
 if (true) {
-    // logs { a: 1 } because a is defined in the global scope
-    console.log({ a });
+    // logs 1 because a is defined in the global scope
+    console.log(a);
 
     // B is only defined in this scope
     // In other words you can only access it within this if statement
     const b = 2;
 }
 
-console.log({ b }); // throws "ReferenceError: b is not defined" because b is not defined in this scope
+console.log(b); // throws "ReferenceError: b is not defined" because b is not defined in this scope

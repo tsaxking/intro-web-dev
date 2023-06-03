@@ -14,7 +14,7 @@ function add(x, y) {
     return x + y;
 }
 const five = add(2, 3);
-const seven = add(3,4);
+const seven = add(3, 4);
 
 // Functions that just take something in and return stuff are pure functions
 // However functions can also do other stuff besides returning a value
