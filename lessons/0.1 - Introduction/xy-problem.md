@@ -33,3 +33,5 @@ var ext = path.extname(str); // .txt
 ## Takeaway
 
 The takeaway here is that if you are working on a problem, ask yourself if what you're doing is the best way to solve the problem. If you're not sure, ask someone. There are a LOT of developers in this world, so there's a good chance someone has already solved your problem. If you can't find a solution, then ask for help. But, when you ask for help, make sure you're asking the right question. Don't ask how to do something, ask how to solve your problem. If you ask how to do something, you might get an answer that works, but isn't the best solution and doesn't work on what we call "edge cases". If you ask how to solve your problem, you might get an answer that works, and is the best solution.
+
+[Next](../1.1%20-%20Prerequisites/downloads.md)

@@ -43,3 +43,11 @@ cp <path> <new_path> # Copy file or directory
 
 cat <path> # Print file contents
 ```
+
+```bash
+code # open vscode
+code . # open current directory in vscode
+code <patn> # open path in vscode
+```
+
+[Next](./git.md)
