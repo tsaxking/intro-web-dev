@@ -24,3 +24,5 @@ tsc # Compile all .ts files in current directory
 tsc <file_name> # Compile specific file
 tsc -w # Watch for changes and compile
 ```
+
+// tsc.cmd

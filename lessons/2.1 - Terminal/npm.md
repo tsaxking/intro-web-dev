@@ -44,3 +44,5 @@ npm unpublish <package_name> --force # Unpublish package
 npm version <major|minor|patch> # Update package version
 npm version <version_number> # Update package version
 ```
+
+// nvm

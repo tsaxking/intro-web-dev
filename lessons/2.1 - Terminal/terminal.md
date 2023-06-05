@@ -24,7 +24,6 @@ ls <path> # List files and folders in path
 cd <path> # Change directory
 cd .. # Go up one directory
 cd ~ # Go to home directory
-cd - # Go to previous directory
 
 mkdir <path> # Make directory
 mkdir -p <path> # Make directory and all parent directories
@@ -43,3 +42,4 @@ cp <path> <new_path> # Copy file or directory
 
 cat <path> # Print file contents
 ```
+// mac

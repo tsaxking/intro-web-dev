@@ -38,7 +38,7 @@ const flashCards = [
     new FlashCard(2122, "Tators"),
     new FlashCard(2910, "Jack in the Box"),
     new FlashCard(4414, "High Tide"),
-    new FlashCard(6036, "Peninsula Robotics :(")
+    new FlashCard(6036, "Peninsula Robotics")
 ];
 
 // Create an interval (you may want to store the interval's id so you can clear it later)

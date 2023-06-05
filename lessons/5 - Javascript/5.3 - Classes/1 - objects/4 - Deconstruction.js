@@ -11,10 +11,10 @@ const obj = {
 // it's like really goofy algebra
 const { key: variableName, foo, baz } = obj;
 
-console.log(foo, baz, variableName);
+console.log(foo, baz, variableName); // bar waldo 1
 
 // You can also do deconstruction for arrays
 const arr = ["a", "b", "c"];
 const [ a, b, c ] = arr;
 
-console.log(a, b, c);
+console.log(a, b, c); // a b c
