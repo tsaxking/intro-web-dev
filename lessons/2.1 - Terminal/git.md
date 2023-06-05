@@ -87,3 +87,5 @@ Here is what you should do:
 6. If there are still conflicts, repeat steps 2-5
 
 If you are working on a PC that has a text editor that you are not familiar with (like Vim). You can make a new branch, push it, then fix the conflicts on a different PC.
+
+[Next](./npm.md)

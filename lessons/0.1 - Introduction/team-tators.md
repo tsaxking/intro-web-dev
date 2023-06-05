@@ -6,3 +6,5 @@ Similar to what was said about FRC, you get out what you put in. Students of all
 
 ## How much time will I have to commit?
 During the season, we meet from 6pm to midnight every weekday, then 1pm to midnight on Saturdays and Sundays. New students are encouraged to come for 1 or two meetings a week, and "veteran" students who have high priority tasks are needed in the shop almost daily. Not every student needs to be there the whole time, but let's be honest, you'll want to be there the whole time ;)
+
+[Next](./resources.md)

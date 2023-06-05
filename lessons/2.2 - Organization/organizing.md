@@ -18,3 +18,6 @@ For example, you could have a folder for each language you use, and then a folde
 Another way to organize your files and folders is by subject. This is useful if you have multiple repositories and projects for multiple groups.
 
 For example, you could have a folder for school, personal, and work, and then a folder for each project/repository in each of those folders.
+
+
+[Next](../3.1%20-%20VSC/extensions.md)

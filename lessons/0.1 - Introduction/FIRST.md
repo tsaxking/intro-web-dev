@@ -7,3 +7,5 @@ FIRST Robotics Competition is a level of FIRST for high school students. In FRC,
 
 ## What am I getting myself into?
 FRC is a huge commitment. It is a lot of work, but it is also a lot of fun. You will learn a lot about engineering, programming, and teamwork. You will learn how to work with others, how to manage your time, and how to solve problems. FRC is a great experience, and you get out of it what you put into it.
+
+[Next](./team-tators.md)

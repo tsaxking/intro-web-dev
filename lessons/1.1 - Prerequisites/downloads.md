@@ -24,3 +24,5 @@ npm install -g typescript
 
 ## Windows terminal - windows only
 [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) is a new, modern, feature-rich, productive terminal application for command-line users. It includes many of the features most frequently requested by the Windows command-line community including support for tabs, rich text, globalization, configurability, theming & styling, and more. The best part is it works like chrome, so you can have multiple tabs open at once! AND it's in darkmode!
+
+[Next](../2.1%20-%20Terminal/terminal.md)

@@ -25,4 +25,4 @@ tsc <file_name> # Compile specific file
 tsc -w # Watch for changes and compile
 ```
 
-// tsc.cmd
+[Next](../2.2%20-%20Organization/organizing.md)
