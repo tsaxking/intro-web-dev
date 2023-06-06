@@ -44,5 +44,30 @@ npm unpublish <package_name> --force # Unpublish package
 npm version <major|minor|patch> # Update package version
 npm version <version_number> # Update package version
 ```
+# Node Version Manager (nvm)
+nvm is a version manager for node.js, designed to be installed per-user, and invoked per-shell. nvm works on any POSIX-compliant shell (sh, dash, ksh, zsh, bash), in particular on these platforms: unix, macOS, and windows WSL.
+
+```bash
+nvm -v # Check nvm version
+nvm -h # Get help
+nvm help <command> # Get help for a command
+nvm <command> -h # Get help for a command
+```
+
+## Managing node versions
+```bash
+nvm ls # List installed node versions
+nvm ls-remote # List available node versions
+nvm install <version> # Install node version
+nvm install <version> --lts # Install node version (LTS)
+nvm install <version> --latest-npm # Install node version with latest npm
+nvm install <version> --reinstall-packages-from=<version> # Install node version and reinstall packages from another version
+
+nvm uninstall <version> # Uninstall node version
+```
+
+
+
+
 
 [Next](./tsc.md)
