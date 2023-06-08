@@ -3,7 +3,7 @@
 // For example: 
 const foo = 1;
 
-// You can combine numbers using +, -, *, /, ** (exponents), and % (remainder.
+// You can combine numbers using +, -, *, /, ** (exponents), and % (remainder).
 
 // If you try turning something that isn’t a number into a number it will turn into NaN or not a number which is actually a number. 
 const str = "string";
@@ -14,4 +14,4 @@ console.log({
     string1,
 })
 
-// You can also use things like Math.round(), Math.log(), Math.random(). etc. to do other things with number
+// You can also use things like Math.round(), Math.log(), Math.random(). etc. to do other things with numbers

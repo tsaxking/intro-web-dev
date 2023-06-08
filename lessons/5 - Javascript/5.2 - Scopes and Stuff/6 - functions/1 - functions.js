@@ -32,6 +32,7 @@ setVariable(1);
 const func1 = function(param1, param2) {
     return param1 + param2;
 }
+
 // or like this
 const func2 = (param1, param2) => {
     return param1 + param2;

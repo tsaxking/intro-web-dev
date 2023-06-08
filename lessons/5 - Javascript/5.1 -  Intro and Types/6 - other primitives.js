@@ -5,7 +5,7 @@
 // You can initialize Big Ints by adding an n after the number
 // For example:
 const bigInt = 123120391209310293n; // will stay as 123120391209310293n
-const normalNumber = 123120391209310293; // will 123120391209310290 because numbers aren't accurate enough
+const normalNumber = 123120391209310293; // will change to 123120391209310290 because numbers aren't accurate enough
 
 // other things of interest:
 // BigInt has no NaN
