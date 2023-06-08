@@ -14,4 +14,4 @@ console.log({
     string1,
 })
 
-// You can also use things like Math.round(), Math.log(), Math.random(). etc. to do other things with number
+// You can also use things like Math.round(), Math.log(), Math.random(). etc. to do other things with numbers

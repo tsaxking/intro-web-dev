@@ -1,4 +1,4 @@
-// Question mark notation is just a shorthand for if statements with a coupe extra features.
+// Question mark notation is just a shorthand for if statements with a couple extra features.
 // It's formatted as <condition> ? <value if the condition is true> : <value if the condition is false>  
 
 const boolean = true;
