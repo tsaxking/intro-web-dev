@@ -56,6 +56,8 @@ console.log({
 // but in very specific cases it is slightly different
 const nullVar = null;
 const nulEqualsUndefined = null === undefined; // false
+// typeof null // "object"
+// typeof undefined // "undefined"
 
 console.log({
     nullVar,
