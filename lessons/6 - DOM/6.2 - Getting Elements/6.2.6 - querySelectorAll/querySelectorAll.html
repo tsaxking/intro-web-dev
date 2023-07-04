@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>querySelectorAll() Example</title>
+    <style>
+        /* Change this color to your favourite color! */
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- Are you wondering what is <ul> an <li>? Hover over them to find out! -->
+    <ul>
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+    </ul>
+
+    <script>
+        // Retrieve all li elements with class 'item'
+        // Notice how it goes element.class and not class.element similar to how its originally called
+        var itemElements = document.querySelectorAll('li.item');
+
+        // Add a class to each retrieved element with a forEach loop
+        itemElements.forEach(function(element) {
+            element.classList.add('highlight');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Example</title>
+</head>
+<body>
+  <h1>Form Example</h1>
+
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" />
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" />
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Accessing elements by name
+    var nameInput = document.getElementsByName('name')[0];
+    var emailInput = document.getElementsByName('email')[0];
+
+    // Manipulating the elements
+    nameInput.value = 'Daniel';
+    emailInput.value = 'Daniel8Pop@example.com';
+  </script>
+</body>
+</html>

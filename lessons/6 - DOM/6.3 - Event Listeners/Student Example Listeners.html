@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show/Hide Pictures</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <img src="/lessons/6 - DOM/6.3 - Event Listeners/Meme1.png" id="image1" class="hidden">
+  <img src="/lessons/6 - DOM/6.3 - Event Listeners/Meme2.jpg" id="image2" class="hidden">
+
+  <script>
+    // Show image
+    function showImage(imageId) {
+      const image = document.getElementById(imageId);
+      // This removes that property, allowing it to be hidden. CSS is cool
+      image.classList.remove('hidden');
+    }
+
+    // Hide image
+    function hideImage(imageId) {
+      const image = document.getElementById(imageId);
+      image.classList.add('hidden');
+    }
+
+    // Event listener for keydown event
+    document.addEventListener('keydown', function(event) {
+      const key = event.key;
+      
+      switch (key) {
+        case '1':
+          showImage('image1');
+          break;
+        case '2':
+          showImage('image2');
+          break;
+        case 'Escape':
+          hideImage('image1');
+          hideImage('image2');
+          break;
+      }
+    });
+  </script>
+</body>
+</html>

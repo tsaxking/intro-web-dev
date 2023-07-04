@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Family Example</title>
+  <style>
+    /* Change this color to your favourite color! (after running it initially) */
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <!-- Here we have a list of elements, as you can see there is an order from 1-5  -->
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li id="highlighted-item">Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+  </ul>
+
+  <script>
+    
+    var highlightedItem = document.getElementById('highlighted-item');
+
+
+    // Accessing next sibling
+    var nextSibling = highlightedItem.nextSibling.nextSibling;
+
+    // If there is indeed a next sibling then it will be highlighted!
+    // Try removing some elements and try with/without the if statement to see if it still works
+    if (nextSibling) {
+      nextSibling.classList.add('highlight');
+    }
+
+    // Accessing previous sibling
+    var previousSibling = highlightedItem.previousSibling.previousSibling;
+
+    if (previousSibling) {
+      previousSibling.classList.add('highlight');
+    }
+
+    // Accessing parent node
+    var parentNode = highlightedItem.parentNode;
+    if (parentNode) {
+      parentNode.style.border = '2px solid red';
+    }
+
+    // Accessing child elements
+    var children = parentNode.children;
+    console.log(children)
+    for (var i = 0; i < children.length; i++) {
+      children[i].style.fontWeight = 'bold';
+    }
+  </script>
+</body>
+</html>
