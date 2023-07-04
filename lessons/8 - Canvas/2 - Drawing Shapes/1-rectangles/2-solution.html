@@ -1,0 +1,176 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Project Solution</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row p-3">
+            <div class="col-6">
+                <canvas id="canvas" width="400" height="400"></canvas>
+            </div>
+            <div class="col-6" id="slider-container">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.querySelector("#canvas");
+        const context = canvas.getContext("2d");
+        const sliderContainer = document.querySelector("#slider-container");
+
+        class Slider {
+            static playIcon = "<span class='material-icons'>play_arrow</span>";
+            static pauseIcon = "<span class='material-icons'>pause</span>";
+
+            constructor(min, max, name, defaultValue = 0) {
+                this.name = name;
+                
+                // This code creates this:
+                // <label for="123123123" class="form-label">Name</label>
+                // <input type="range" class="form-range" id="123123123">
+                this.slider = document.createElement("input");
+                this.label = document.createElement("label");
+                this.playButton = document.createElement("button");
+                this.labelSpan = document.createElement("span");
+                this.row = document.createElement("div");
+
+                this.row.classList.add("row");
+                this.row.append(this.label, this.slider);
+
+                this.slider.type = "range";
+                this.slider.classList.add("form-range");
+                this.min = min;
+                this.max = max;
+                this.value = defaultValue;
+
+                this.label.classList.add('form-label');
+                this.updateLabel();
+
+                this.playButton.classList.add("btn", "btn-sm", "btn-primary", "ms-2");
+                this.playButton.innerHTML = Slider.playIcon;
+                this.playInterval;
+
+                this.label.append(this.labelSpan);
+
+                // This is just because bootstrap is weird and so you have to use ids for labels
+                const budgetUUID = "a" + (Date.now() + Math.random());
+                this.slider.id = budgetUUID;
+                this.label.setAttribute("for", budgetUUID);
+
+                this.slider.addEventListener("input", this.update.bind(this));
+
+                this.playButton.addEventListener("click", _ => {
+                    if (this.playInterval === undefined) {
+                        this.playButton.innerHTML = Slider.pauseIcon;
+                        this.playInterval = setInterval(_ => {
+                            const { min, max } = this;
+
+                            const dV = (max - min)/100;
+                            this.value = +this.value + dV;
+                            if (+this.value >= max) this.value = min;
+                            this.update();
+                        }, 50);
+                    } else {
+                        this.playButton.innerHTML = Slider.playIcon;
+                        clearInterval(this.playInterval);
+                        this.playInterval = undefined;
+                    }
+                });
+
+                this.label.append(this.playButton);
+            }
+
+            get min() {
+                return this.slider.min;
+            }
+
+            set min(min) {
+                this.slider.min = min;
+            }
+
+            get max() {
+                return this.slider.max;
+            }
+
+            set max(max) {
+                this.slider.max = max;
+            }
+
+            get value() {
+                return this.slider.value;
+            }
+
+            set value(v) {
+                this.slider.value = v;
+            }
+
+            addToContainer(container) {
+                container.append(this.row);
+            };
+        
+            updateLabel() {
+                this.labelSpan.innerHTML = `${this.name}: ${this.value}`;
+            }
+
+            update() {
+                this.updateLabel();
+                drawRect();
+            }
+        }
+    
+        const widthSlider = new Slider(0, 200, "Width", 100);
+        const heightSlider = new Slider(0, 200, "Height", 100);
+        const xSlider = new Slider(0, 200, "X");
+        const ySlider = new Slider(0, 200, "Y");
+        const hSlider = new Slider(0, 360, "Hue");
+        const sSlider = new Slider(0, 100, "Saturation", 100);
+        const lSlider = new Slider(0, 100, "Lightness", 50);
+
+        const sliders = [
+            xSlider,
+            ySlider,
+            widthSlider,
+            heightSlider,
+            hSlider,
+            sSlider,
+            lSlider,
+        ];
+
+        sliders.forEach(s => {
+            s.addToContainer(sliderContainer);
+        });
+
+        function drawRect() {
+            const { width, height } = canvas;
+            context.clearRect(0, 0, width, height);
+
+            const [
+                x, y, rectWidth, rectHeight,
+                h, s, l,
+            ] = sliders.map(s => s.value);
+            context.fillStyle = `hsl(${h}, ${s}%, ${l}%)`;
+            context.fillRect(x, y, rectWidth, rectHeight);
+        }
+
+        drawRect();
+    </script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+</body>
+</html>

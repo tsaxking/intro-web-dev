@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Example</title>
+</head>
+<body>
+    <!-- You can add a canvas to html with a canvas tag -->
+    <!-- Note that putting things inside canvases doesn't do anything -->
+    <!-- For now the canvas is blank but you can access the canvas in js to draw things on it-->
+    <canvas id="canvas"></canvas>
+
+    <!-- You can also make bigger canvases by setting their height in either html or js -->
+    <canvas id="big-canvas" width="1000" height="1000"></canvas>
+
+    <!-- We will learn what this code does later this is just here so you can see the canvases -->
+    <script>
+        function fillCanvas(id, color) {
+            const canvas = document.querySelector(`#${id}`);
+
+            const context = canvas.getContext("2d");
+
+            context.fillStyle = color;
+            const { width, height } = canvas;
+            console.log(context);
+            context.fillRect(0, 0, width, height);
+        }
+
+        fillCanvas("canvas", "red");
+        fillCanvas("big-canvas", "blue")
+
+    </script>
+</body>
+</html>

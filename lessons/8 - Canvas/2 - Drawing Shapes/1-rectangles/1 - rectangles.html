@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangles</title>
+</head>
+<body>
+    <canvas id="canvas" width="260" height="250"></canvas>
+
+    <script>
+        // Getting the canvas inside javascript
+        const canvas = document.querySelector("#canvas");
+        
+        // Firstly, in order to do anything with the canvas we have to get the canvas's "context"
+        // We can do this by doing canvas.getContext('2d') because we are just going to be doing 3d things
+        const context = canvas.getContext("2d");
+
+        // Now, if we want to make the rectangles a certain color, we have to set either the fillStyle or strokeStyle
+        // StrokeStyle determines the color of lines so if you are doing a rectangle outline then you would use strokeStyle
+        // FillStyle is the inside of shapes so if you are doing a filled rectangle then you would use fillStyle
+        context.strokeStyle = "rgb(125, 125, 125)"; //Grey
+        context.fillStyle = "rgba(200, 10, 10, 0.5)"; // Red (Transparent so you can see where the stroke and fill overlap)
+
+        // Additionally by setting the lineWidth we can change how many pixels thick the outline is
+        context.lineWidth = 10;
+
+        // You can then draw the outside of the rect using canvas.strokeRect(x, y, width, height)
+        // These rectangles should be grey because thats what we set the strokeStyle to earlier
+        context.strokeRect(10, 10, 100, 100);
+
+        // To do filledRects use fillRect
+        // These rectangles should be red because of the fillStyle earlier
+        context.fillRect(10, 10, 100, 100);
+
+        // You can also do
+        context.rect(160, 10, 100, 100);
+        context.fill();
+
+        // You can also remove stuff from the canvas using clearRect
+        context.clearRect(160, 10, 50, 50); // This will remove a chunk of the rectangle from before
+        // You can clear the entire canvas by doing: (it's commented out because right now we don't want to clear the canvas)
+        // const { width, height } = canvas;
+        // context.clearRect(0, 0, width, height);
+    </script>
+</body>
+</html>

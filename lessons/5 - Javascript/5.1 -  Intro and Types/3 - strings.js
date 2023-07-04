@@ -15,8 +15,8 @@ const foo3 = `
 // They allow you to write multi-line strings
 // An you can also use ${variable} to add variables within the string
 // For example:
-const foo = "World";
-const bar = `Hello ${foo}`; // Bar will be equal to "Hello World"
+const foo = "World!!!";
+const bar = `Hello ${foo}`; // Bar will be equal to "Hello World!!!"
 console.log({ bar });
 
 // You can connect strings with the + operator 
