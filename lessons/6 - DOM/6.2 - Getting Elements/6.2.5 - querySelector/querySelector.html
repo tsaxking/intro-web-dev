@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>querySelector() Example</title>
+    <style>
+        /* after running this initially, try it out with your favourite color! */
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>This is not a paragraph element</h1>
+        <p>This is a paragraph.</p>
+        <p>This is another paragraph.</p>
+    </div>
+
+    <script>
+        // Retrieve the first paragraph element using querySelector()
+        // Notice how is retrieves the first paragraph element in the iteration
+        var paragraphElement = document.querySelector('p');
+
+        // Add a class to the retrieved element
+        paragraphElement.classList.add('highlight');
+    </script>
+</body>
+</html>
+
+<!-- Now try figuring out how you can select the h1 element instead! -->

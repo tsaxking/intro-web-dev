@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>getElementsByName Example</title>
+</head>
+<body>
+  <!-- Here we put our boxes -->
+  <input type="text" name="username" placeholder="Enter your username" />
+  <input type="text" name="email" placeholder="Enter your email" />
+  <input type="text" name="age" placeholder="Enter your age" />
+
+  <script>
+    // Accessing elements by name
+    var usernameInput = document.getElementsByName('username')[0];
+    var emailInput = document.getElementsByName('email')[0];
+    var ageInput = document.getElementsByName('age')[0];
+
+    // Changing the values
+    usernameInput.value = 'Daniel';
+    emailInput.value = 'Daniel@example.com';
+    ageInput.value = 25;
+
+  </script>
+</body>
+</html>
+
+<!-- Try putting your own values with your name, email, and age! -->

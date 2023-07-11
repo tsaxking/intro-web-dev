@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Interaction Events Example</title>
+</head>
+<body>
+  <button id="myButton">Click Me!</button>
+
+  <script>
+    // Select the button element, remember getElementById.html?
+    const button = document.getElementById('myButton');
+
+    // Alerts the user with a message. Notice the alert message and try to change it to your own message
+    function handleClick() {
+      alert('Button clicked!');
+    }
+
+    button.addEventListener('click', handleClick);
+
+    // Event handler function for the 'mouseover' event, try changing the color to your favourite color
+    function handleMouseOver() {
+      button.style.backgroundColor = 'yellow';
+    }
+
+    button.addEventListener('mouseover', handleMouseOver);
+
+    // Here we are setting the background color back to white
+    function handleMouseOut() {
+      button.style.backgroundColor = '';
+    }
+
+    button.addEventListener('mouseout', handleMouseOut);
+  </script>
+</body>
+</html>

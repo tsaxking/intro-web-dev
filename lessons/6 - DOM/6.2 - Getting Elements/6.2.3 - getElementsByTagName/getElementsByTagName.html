@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>getElementsByTagName Example</title>
+</head>
+<body>
+  <h1>Heading 1</h1>
+  
+  <p>This is a paragraph of text</p>
+  
+  <h2>Heading 2</h2>
+  
+  <!-- Notice how getElementsByTagName also grabs the h2 tag in the div -->
+  <div>
+    <h2>Another Heading 2</h2>
+  </div>
+  
+  <p>Another paragraph</p>
+  
+  <script>
+    // Get all the <h2> elements in the document
+    var headings = document.getElementsByTagName('h2');
+    
+    // Change the text color of each <h2> element
+        // Try changing it to your favoroutie color or hexidecimal!
+    for (var i = 0; i < headings.length; i++) {
+      headings[i].style.color = 'blue';
+    }
+  </script>
+</body>
+</html>
+
+<!-- Try changing the color of the paragraph <p> tags instead! -->

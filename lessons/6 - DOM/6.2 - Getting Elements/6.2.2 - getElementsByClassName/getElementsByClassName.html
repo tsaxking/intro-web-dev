@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>getElementsByClassName() Example</title>
+    <style>
+        /* Change this color to your favourite color! */
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<!-- Notice the similarities between this and querySelectorAll.html -->
+<body>
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+
+    <script>
+        // Retrieve all elements with class 'box'
+        var boxElements = document.getElementsByClassName('box');
+
+        // Add a class to each retrieved element
+        for (var i = 0; i < boxElements.length; i++) {
+            boxElements[i].classList.add('highlight');
+        }
+    </script>
+</body>
+</html>
+
+<!-- Try changing the class name from box to something else! What else needs to be changed? -->
